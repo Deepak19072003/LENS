@@ -181,7 +181,7 @@ elif tool == "🍔 Review Sentiment":
             st.warning("⚠️ Please enter a review before analyzing.")
         else:
             prediction = review_model.predict([review])[0]
-            label = "😋 Delicious!" if prediction == 1 else "😐 Not impressive"
+            label = "😋 Positive" if prediction == 1 else "😐 Negative"
             image_path = "Liked.jpg" if prediction == 1 else "Not Liked.jpg"
             st.success(f"Review Sentiment: {label}")
             st.image(image_path, width=160)
